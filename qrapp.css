@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+/* this should be fixed with media queries! */
+body
+{
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+#mainview
+{
+	height: 100%;
+	width: 100%;
+	border: 1px solid black;
+	overflow: hidden;
+}
+
+#scrollpane
+{
+	position: relative;
+	right: 0px;
+	height: 100%;
+	/*transition: 0.2s ease-in-out;  change card speed */
+	
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+}
+
+.qrCode img
+{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.inputLabel
+{
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.inputField
+{
+	width: 170px;
+	border-radius: 5px;
+}
+
+.createDescriptionField
+{
+	margin-top: 20px;
+}
+
+.menuButton
+{
+	display: inline-block;
+	margin: 5px;
+	padding: 6px 14px;
+	border-radius: 5px;
+	background-color: #BBB;
+	border: 2px solid orange;
+	font-size: 20px;
+}
+
+.buttonContainer
+{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.addNewButtonContainer
+{
+	text-align: center;
+	height: 100px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+/*** page counter ****/
+#pageCounter
+{
+	position: absolute;
+	z-index: 1;
+	bottom: 10px;
+}
+
+.pageCounterElement
+{
+	border: 1px solid gray;
+	border-radius: 6px;
+	height: 12px;
+	width: 12px;
+	margin: 2px;
+	float: left;
+}
+
+.pageCounterElementSelected
+{
+	background-color: black;
+}
+
+.codeDescription
+{
+	padding: 10px;
+	text-align: center;
+}
+
+.inputFieldContainer
+{	
+	padding: 3px;
+}
+
+.frontSideCard,
+.backSideCard
+{
+	padding: 10px;
+}
+
+/*** card animation ****/
+.card
+{
+	height: 100%;
+	float: left;
+	position: relative;	
+	transition: 1.0s; /* flip card speed */
+	
+	-webkit-transform-style: preserve-3d;
+	
+	-moz-transform-style: preserve-3d;
+}
+
+
+.frontSideCard,
+.backSideCard
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: lightgray;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+}
+
+.frontSideCard
+{
+	z-index: 2;
+}
+
+.backSideCard
+{
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+
+.backSideVisible
+{
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+
